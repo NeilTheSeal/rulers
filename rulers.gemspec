@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "rack", "~> 3.1"
+  spec.add_development_dependency "rack-test", "~> 2.2.0"
   spec.add_dependency "rackup", "~> 2.2.1"
   spec.add_dependency "webrick", "~> 1.9.1"
 
