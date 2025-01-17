@@ -13,7 +13,7 @@ class AppTest < Test::Unit::TestCase
     RulersTestApp.new
   end
 
-  def test_hello_world_response
+  def test_response
     # Perform a GET request to the root path
     get "/"
 
