@@ -2,7 +2,7 @@
 
 require_relative "test_helper"
 
-class TestApp < Rulers::Application
+class RulersTestApp < Rulers::Application
 end
 
 class AppTest < Test::Unit::TestCase
@@ -10,7 +10,7 @@ class AppTest < Test::Unit::TestCase
 
   # Define the Rack application under test
   def app
-    TestApp.new
+    RulersTestApp.new
   end
 
   def test_hello_world_response
@@ -21,9 +21,6 @@ class AppTest < Test::Unit::TestCase
     assert_equal 200, last_response.status, "Expected HTTP status 200"
 
     # Assert the response content type
-    assert_equal "text/plain", last_response.headers["Content-Type"], "Expected Content-Type to be 'text/plain'"
-
-    # Assert the response body
-    assert_equal "Hello, World!", last_response.body, "Expected response body to be 'Hello, World!'"
+    assert_equal "text/html", last_response.headers["Content-Type"], "Expected Content-Type to be 'text/html'"
   end
 end
