@@ -4,9 +4,13 @@ class Object
 
     @calling_const_missing = true
     require Rulers.to_underscore(c.to_s)
-    Object.const_get(c)
+    klass = Object.const_get(c)
     @calling_const_missing = false
 
     klass
+  end
+
+  def instance_variables_hash
+    Hash[instance_variables.map { |name| [name, instance_variable_get(name)] }]
   end
 end

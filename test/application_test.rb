@@ -2,6 +2,12 @@
 
 require_relative "test_helper"
 
+class IndexController < Rulers::Controller
+  def index
+    "Rulers"
+  end
+end
+
 class RulersTestApp < Rulers::Application
 end
 
@@ -21,6 +27,14 @@ class AppTest < Test::Unit::TestCase
     assert_equal 200, last_response.status, "Expected HTTP status 200"
 
     # Assert the response content type
-    assert_equal "text/html", last_response.headers["Content-Type"], "Expected Content-Type to be 'text/html'"
+    assert_equal(
+      "text/html",
+      last_response.headers["Content-Type"],
+      "Expected Content-Type to be 'text/html"
+    )
+
+    body = last_response.body
+
+    assert body["Rulers"]
   end
 end
